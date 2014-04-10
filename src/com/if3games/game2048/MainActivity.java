@@ -166,6 +166,8 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 	        startActivityForResult(Games.Achievements.getAchievementsIntent(getApiClient()),
 	                    RC_UNUSED);
 	    } else {
+	        // start the sign-in flow
+	        beginUserInitiatedSignIn();
 	    }
 	}
 
@@ -175,6 +177,8 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 	    	startActivityForResult(Games.Leaderboards.getAllLeaderboardsIntent(getApiClient()),
 	                RC_UNUSED);
 	    } else {
+	        // start the sign-in flow
+	        beginUserInitiatedSignIn();
 	    }	
 	}
 }
