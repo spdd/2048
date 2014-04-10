@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Window;
 
-public class MainActivity extends BaseGameActivity implements InputListener.Listener {
+public class MainActivity extends BaseGameActivity implements InputListener.Listener, MainGame.Listener {
 
 	MainView view;
 	public static final String WIDTH = "width";
@@ -29,8 +29,8 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		view = new MainView(getBaseContext());
+		//requestWindowFeature(Window.FEATURE_NO_TITLE);
+		view = new MainView(this);
 
 		SharedPreferences settings = PreferenceManager
 				.getDefaultSharedPreferences(this);
@@ -180,5 +180,28 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 	        // start the sign-in flow
 	        beginUserInitiatedSignIn();
 	    }	
+	}
+	
+    final static int[] ACHIEVEMENT = {
+        R.string.achievement_32, R.string.achievement_64, R.string.achievement_128, 
+        R.string.achievement_256, R.string.achievement_512,R.string.achievement_1024, 
+        R.string.achievement_2048, R.string.achievement_4096
+    };
+    
+    final static int[] ACHIEVEMENT_BLOCKS = { 32, 64, 128, 256, 512, 1024, 2048, 4096 };
+
+	@Override
+	public void onUnlockAchievement(int mergedValue) {
+    	for (int i = 0; i < ACHIEVEMENT_BLOCKS.length; i++) {
+			if(mergedValue == ACHIEVEMENT_BLOCKS[i]) {
+				Games.Achievements.unlock(getApiClient(), getString(ACHIEVEMENT[i]));
+				break;
+			}
+		}		
+	}
+
+	@Override
+	public void onStoreScoreLeaderboard(long highScore) {
+		Games.Leaderboards.submitScore(getApiClient(), getString(R.string.leaderboard_score), highScore);
 	}
 }

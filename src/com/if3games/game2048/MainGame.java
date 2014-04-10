@@ -14,6 +14,13 @@ import java.util.List;
 import com.if3games.game2048.R;
 
 public class MainGame {
+	
+    public interface Listener {
+        public void onUnlockAchievement(int mergedValue);
+        public void onStoreScoreLeaderboard(long highScore);
+    }
+    
+    private Listener mListener;
 
 	public static final int SPAWN_ANIMATION = -1;
 	public static final int MOVE_ANIMATION = 0;
@@ -68,6 +75,7 @@ public class MainGame {
 
 	public MainGame(Context context, MainView view) {
 		mContext = context;
+		mListener = (Listener) context;
 		mView = view;
 		initSoundPool();
 	}
@@ -261,6 +269,9 @@ public class MainGame {
 						// Update the score
 						score = score + merged.getValue();
 						highScore = Math.max(score, highScore);
+						
+						// unlock Achievement
+						mListener.onUnlockAchievement(merged.getValue());
 
 						// The mighty 2048 tile
 						if (merged.getValue() >= winValue() && !gameWon()) {
@@ -308,6 +319,7 @@ public class MainGame {
 		if (score >= highScore) {
 			highScore = score;
 			recordHighScore();
+			mListener.onStoreScoreLeaderboard(highScore);
 		}
 	}
 

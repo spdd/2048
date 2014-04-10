@@ -228,17 +228,19 @@ containing a value of this type.
         public static final int common_signin_btn_text_pressed_dark=0x7f020025;
         public static final int common_signin_btn_text_pressed_light=0x7f020026;
         public static final int fade_rectangle=0x7f020027;
-        public static final int ic_action_cheat=0x7f020028;
-        public static final int ic_action_refresh=0x7f020029;
-        public static final int ic_action_settings=0x7f02002a;
-        public static final int ic_action_undo=0x7f02002b;
-        public static final int ic_launcher=0x7f02002c;
-        public static final int ic_plusone_medium_off_client=0x7f02002d;
-        public static final int ic_plusone_small_off_client=0x7f02002e;
-        public static final int ic_plusone_standard_off_client=0x7f02002f;
-        public static final int ic_plusone_tall_off_client=0x7f020030;
-        public static final int light_up_rectangle=0x7f020031;
-        public static final int logo_2048=0x7f020032;
+        public static final int ic_achievements=0x7f020028;
+        public static final int ic_action_cheat=0x7f020029;
+        public static final int ic_action_refresh=0x7f02002a;
+        public static final int ic_action_settings=0x7f02002b;
+        public static final int ic_action_undo=0x7f02002c;
+        public static final int ic_launcher=0x7f02002d;
+        public static final int ic_leaderboard=0x7f02002e;
+        public static final int ic_plusone_medium_off_client=0x7f02002f;
+        public static final int ic_plusone_small_off_client=0x7f020030;
+        public static final int ic_plusone_standard_off_client=0x7f020031;
+        public static final int ic_plusone_tall_off_client=0x7f020032;
+        public static final int light_up_rectangle=0x7f020033;
+        public static final int logo_2048=0x7f020034;
     }
     public static final class id {
         public static final int hybrid=0x7f050004;

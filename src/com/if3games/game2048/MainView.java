@@ -607,8 +607,8 @@ public class MainView extends View {
 			cellRectangle[13] = resources
 					.getDrawable(R.drawable.cell_rectangle_8192);
 			newGameIcon = resources.getDrawable(R.drawable.ic_action_refresh);
-			undoIcon = resources.getDrawable(R.drawable.ic_action_undo);
-			cheatIcon = resources.getDrawable(R.drawable.ic_action_cheat);
+			undoIcon = resources.getDrawable(R.drawable.ic_achievements);
+			cheatIcon = resources.getDrawable(R.drawable.ic_leaderboard);
 			lightUpRectangle = resources
 					.getDrawable(R.drawable.light_up_rectangle);
 			fadeRectangle = resources.getDrawable(R.drawable.fade_rectangle);
