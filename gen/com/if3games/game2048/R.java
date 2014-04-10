@@ -239,8 +239,9 @@ containing a value of this type.
         public static final int ic_plusone_small_off_client=0x7f020030;
         public static final int ic_plusone_standard_off_client=0x7f020031;
         public static final int ic_plusone_tall_off_client=0x7f020032;
-        public static final int light_up_rectangle=0x7f020033;
-        public static final int logo_2048=0x7f020034;
+        public static final int icon=0x7f020033;
+        public static final int light_up_rectangle=0x7f020034;
+        public static final int logo_2048=0x7f020035;
     }
     public static final class id {
         public static final int hybrid=0x7f050004;

@@ -35,7 +35,7 @@ public class MainGame {
 			+ SPAWN_ANIMATION_TIME;
 	private static final String HIGH_SCORE = "high score";
 
-	public static final int startingMaxValue = 2048;
+	public static final int startingMaxValue = 4096;
 	public static final int endingMaxValue = 8192;
 
 	// Odd state = game is not active
@@ -81,7 +81,7 @@ public class MainGame {
 	}
 
 	public void newGame() {
-		playSound(3, 1);
+		//playSound(3, 1);
 		if (grid == null) {
 			grid = new Grid(numSquaresX, numSquaresY);
 		} else {
@@ -165,7 +165,7 @@ public class MainGame {
 
 	// cheat remove 2
 	public void cheat() {
-		playSound(3, 1);
+		//playSound(3, 1);
 		ArrayList<Cell> notAvailableCell = grid.getNotAvailableCells();
 		Tile tile;
 		prepareUndoState();
@@ -192,7 +192,7 @@ public class MainGame {
 	}
 
 	public void revertUndoState() {
-		playSound(3, 1);
+		//playSound(3, 1);
 		if (canUndo) {
 			canUndo = false;
 			aGrid.cancelAnimations();
@@ -217,7 +217,7 @@ public class MainGame {
 	}
 
 	public void move(int direction) {
-		playSound(1, 1); // move sound
+		//playSound(1, 1); // move sound
 		aGrid.cancelAnimations();
 		// 0: up, 1: right, 2: down, 3: left
 		if (!isActive()) {
@@ -242,7 +242,7 @@ public class MainGame {
 
 					if (next != null && next.getValue() == tile.getValue()
 							&& next.getMergedFrom() == null) {
-						playSound(2, 1); // get ponit sound
+						//playSound(2, 1); // get ponit sound
 
 						Tile merged = new Tile(positions[1],
 								tile.getValue() * 2);
@@ -276,7 +276,7 @@ public class MainGame {
 						// The mighty 2048 tile
 						if (merged.getValue() >= winValue() && !gameWon()) {
 							gameState = gameState + GAME_WIN; // Set win state
-							playSound(4, 1);
+							//playSound(4, 1);
 							endGame();
 						}
 					} else {
@@ -309,7 +309,7 @@ public class MainGame {
 		if (!movesAvailable() && !gameWon()) {
 			gameState = GAME_LOST;
 			endGame();
-			playSound(5, 1);
+			//playSound(5, 1);
 		}
 	}
 
