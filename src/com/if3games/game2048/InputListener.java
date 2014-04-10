@@ -30,9 +30,10 @@ public class InputListener implements View.OnTouchListener {
 
 	MainView mView;
 
-	public InputListener(MainView view) {
+	public InputListener(MainView view, Listener listener) {
 		super();
 		this.mView = view;
+		mListener = listener;
 	}
 
 	public boolean onTouch(View view, MotionEvent event) {
@@ -128,9 +129,11 @@ public class InputListener implements View.OnTouchListener {
 				if (iconPressed(mView.sXNewGame, mView.sYIcons)) {
 					mView.game.newGame();
 				} else if (iconPressed(mView.sXUndo, mView.sYIcons)) {
-					mView.game.revertUndoState();
+					//mView.game.revertUndoState();
+					mListener.onShowAchievementsRequested();
 				} else if (iconPressed(mView.sXCheat, mView.sYIcons)) {
-					mView.game.cheat();
+					//mView.game.cheat();
+					mListener.onShowLeaderboardsRequested();
 				} else if (isTap(2)
 						&& inRange(mView.startingX, x, mView.endingX)
 						&& inRange(mView.startingY, x, mView.endingY)
@@ -159,9 +162,4 @@ public class InputListener implements View.OnTouchListener {
 	private boolean isTap(int factor) {
 		return pathMoved() <= mView.iconSize * factor;
 	}
-	
-	public void setListener(Listener l) {
-	        mListener = l;
-	}
-
 }

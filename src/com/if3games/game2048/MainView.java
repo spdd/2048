@@ -12,10 +12,14 @@ import android.view.View;
 
 import java.util.ArrayList;
 
+import com.if3games.game2048.InputListener.Listener;
 import com.if3games.game2048.R;
 
 public class MainView extends View {
-
+	
+	// MainActivity Listener
+	private InputListener.Listener mListener;
+	
 	// Internal variables
 	Paint paint = new Paint();
 	public MainGame game;
@@ -557,6 +561,7 @@ public class MainView extends View {
 
 	public MainView(Context context) {
 		super(context);
+		mListener = (Listener) context;
 		Resources resources = context.getResources();
 		// Loading resources
 		game = new MainGame(context, this);
@@ -618,7 +623,7 @@ public class MainView extends View {
 		} catch (Exception e) {
 			System.out.println("Error getting assets?");
 		}
-		setOnTouchListener(new InputListener(this));
+		setOnTouchListener(new InputListener(this, mListener));
 		game.newGame();
 	}
 

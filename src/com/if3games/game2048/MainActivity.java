@@ -1,5 +1,6 @@
 package com.if3games.game2048;
 
+import com.google.android.gms.games.Games;
 import com.google.example.games.basegameutils.BaseGameActivity;
 
 import android.app.Activity;
@@ -9,7 +10,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Window;
 
-public class MainActivity extends BaseGameActivity {
+public class MainActivity extends BaseGameActivity implements InputListener.Listener {
 
 	MainView view;
 	public static final String WIDTH = "width";
@@ -21,6 +22,9 @@ public class MainActivity extends BaseGameActivity {
 	public static final String UNDO_GRID = "undo";
 	public static final String GAME_STATE = "game state";
 	public static final String UNDO_GAME_STATE = "undo game state";
+	
+    // request codes we use when invoking an external activity
+    final int RC_RESOLVE = 5000, RC_UNUSED = 5001;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -155,12 +159,22 @@ public class MainActivity extends BaseGameActivity {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	public void showLeaderboards() {
-		
+
+	@Override
+	public void onShowAchievementsRequested() {
+	    if (isSignedIn()) {
+	        startActivityForResult(Games.Achievements.getAchievementsIntent(getApiClient()),
+	                    RC_UNUSED);
+	    } else {
+	    }
 	}
-	
-	public void showAchievements() {
-		
+
+	@Override
+	public void onShowLeaderboardsRequested() {
+	    if (isSignedIn()) {
+	    	startActivityForResult(Games.Leaderboards.getAllLeaderboardsIntent(getApiClient()),
+	                RC_UNUSED);
+	    } else {
+	    }	
 	}
 }
