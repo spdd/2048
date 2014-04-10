@@ -1,4 +1,4 @@
-package com.young.games.game2048;
+package com.if3games.game2048;
 
 public class Tile extends Cell {
 	private int value;

@@ -1,4 +1,4 @@
-package com.young.games.game2048;
+package com.if3games.game2048;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -11,6 +11,8 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 
 import java.util.ArrayList;
+
+import com.if3games.game2048.R;
 
 public class MainView extends View {
 

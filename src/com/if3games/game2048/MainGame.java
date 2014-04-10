@@ -1,4 +1,4 @@
-package com.young.games.game2048;
+package com.if3games.game2048;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+
+import com.if3games.game2048.R;
 
 public class MainGame {
 

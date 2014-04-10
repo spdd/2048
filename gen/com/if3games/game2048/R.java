@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.young.games.game2048;
+package com.if3games.game2048;
 
 public final class R {
     public static final class attr {
@@ -53,19 +53,34 @@ public final class R {
         public static final int win=0x7f030004;
     }
     public static final class string {
-        public static final int action_settings=0x7f060003;
-        public static final int app_name=0x7f060000;
-        public static final int endless=0x7f06000c;
-        public static final int for_now=0x7f06000b;
-        public static final int game_over=0x7f060009;
-        public static final int go_on=0x7f06000a;
-        public static final int header=0x7f060001;
-        public static final int hello_world=0x7f060002;
-        public static final int high_score=0x7f060005;
-        public static final int instructions=0x7f060007;
-        public static final int new_game=0x7f060004;
-        public static final int score=0x7f060006;
-        public static final int you_win=0x7f060008;
+        public static final int achievement_1200=0x7f060001;
+        public static final int achievement_1400=0x7f060002;
+        public static final int achievement_1600=0x7f060003;
+        public static final int achievement_1800=0x7f060004;
+        public static final int achievement_2000=0x7f060005;
+        public static final int achievement_2200=0x7f060006;
+        public static final int achievement_2400=0x7f060007;
+        public static final int achievement_2500=0x7f060008;
+        public static final int achievement_2500_GM=0x7f060009;
+        public static final int achievement_2600_PCM_1=0x7f06000a;
+        public static final int achievement_2700_PCM_2=0x7f06000b;
+        public static final int achievement_2800_CM=0x7f06000c;
+        public static final int action_settings=0x7f060012;
+        public static final int app_id_gms=0x7f060000;
+        public static final int app_name=0x7f06000f;
+        public static final int endless=0x7f06001b;
+        public static final int for_now=0x7f06001a;
+        public static final int game_over=0x7f060018;
+        public static final int go_on=0x7f060019;
+        public static final int header=0x7f060010;
+        public static final int hello_world=0x7f060011;
+        public static final int high_score=0x7f060014;
+        public static final int instructions=0x7f060016;
+        public static final int leaderboard_score=0x7f06000d;
+        public static final int leaderboard_winners=0x7f06000e;
+        public static final int new_game=0x7f060013;
+        public static final int score=0x7f060015;
+        public static final int you_win=0x7f060017;
     }
     public static final class style {
         public static final int AppBaseTheme=0x7f070000;
