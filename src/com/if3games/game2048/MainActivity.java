@@ -1,5 +1,7 @@
 package com.if3games.game2048;
 
+import com.google.example.games.basegameutils.BaseGameActivity;
+
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -7,7 +9,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Window;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseGameActivity {
 
 	MainView view;
 	public static final String WIDTH = "width";
@@ -141,4 +143,26 @@ public class MainActivity extends Activity {
 		view.game.lastGameState = settings.getInt(UNDO_GAME_STATE,
 				view.game.lastGameState);
 	}
+
+	@Override
+	public void onSignInFailed() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onSignInSucceeded() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void showLeaderboards() {
+		
+	}
+	
+	public void showAchievements() {
+		
+	}
+	
+	public class 
 }
