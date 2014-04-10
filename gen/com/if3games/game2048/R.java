@@ -258,21 +258,17 @@ containing a value of this type.
         public static final int win=0x7f030004;
     }
     public static final class string {
-        public static final int achievement_1200=0x7f060020;
-        public static final int achievement_1400=0x7f060021;
-        public static final int achievement_1600=0x7f060022;
-        public static final int achievement_1800=0x7f060023;
-        public static final int achievement_2000=0x7f060024;
-        public static final int achievement_2200=0x7f060025;
-        public static final int achievement_2400=0x7f060026;
-        public static final int achievement_2500=0x7f060027;
-        public static final int achievement_2500_GM=0x7f060028;
-        public static final int achievement_2600_PCM_1=0x7f060029;
-        public static final int achievement_2700_PCM_2=0x7f06002a;
-        public static final int achievement_2800_CM=0x7f06002b;
-        public static final int action_settings=0x7f060031;
+        public static final int achievement_1024=0x7f060025;
+        public static final int achievement_128=0x7f060022;
+        public static final int achievement_2048=0x7f060026;
+        public static final int achievement_256=0x7f060023;
+        public static final int achievement_32=0x7f060020;
+        public static final int achievement_4096=0x7f060027;
+        public static final int achievement_512=0x7f060024;
+        public static final int achievement_64=0x7f060021;
+        public static final int action_settings=0x7f06002c;
         public static final int app_id_gms=0x7f06001f;
-        public static final int app_name=0x7f06002e;
+        public static final int app_name=0x7f060029;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -367,26 +363,25 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
-        public static final int endless=0x7f06003a;
-        public static final int for_now=0x7f060039;
-        public static final int game_over=0x7f060037;
+        public static final int endless=0x7f060035;
+        public static final int for_now=0x7f060034;
+        public static final int game_over=0x7f060032;
         public static final int gamehelper_app_misconfigured=0x7f06001c;
         public static final int gamehelper_license_failed=0x7f06001d;
         public static final int gamehelper_sign_in_failed=0x7f06001b;
         public static final int gamehelper_unknown_error=0x7f06001e;
-        public static final int go_on=0x7f060038;
-        public static final int header=0x7f06002f;
-        public static final int hello_world=0x7f060030;
-        public static final int high_score=0x7f060033;
-        public static final int instructions=0x7f060035;
-        public static final int leaderboard_score=0x7f06002c;
-        public static final int leaderboard_winners=0x7f06002d;
+        public static final int go_on=0x7f060033;
+        public static final int header=0x7f06002a;
+        public static final int hello_world=0x7f06002b;
+        public static final int high_score=0x7f06002e;
+        public static final int instructions=0x7f060030;
+        public static final int leaderboard_score=0x7f060028;
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f06001a;
-        public static final int new_game=0x7f060032;
-        public static final int score=0x7f060034;
-        public static final int you_win=0x7f060036;
+        public static final int new_game=0x7f06002d;
+        public static final int score=0x7f06002f;
+        public static final int you_win=0x7f060031;
     }
     public static final class style {
         public static final int AppBaseTheme=0x7f090000;
