@@ -163,6 +163,4 @@ public class MainActivity extends BaseGameActivity {
 	public void showAchievements() {
 		
 	}
-	
-	public class 
 }

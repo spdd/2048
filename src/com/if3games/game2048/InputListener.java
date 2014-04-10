@@ -4,6 +4,12 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class InputListener implements View.OnTouchListener {
+	
+    public interface Listener {
+        public void onShowAchievementsRequested();
+        public void onShowLeaderboardsRequested();
+    }
+    public Listener mListener = null;
 
 	private static final int SWIPE_MIN_DISTANCE = 0;
 	private static final int SWIPE_THRESHOLD_VELOCITY = 25;
@@ -152,6 +158,10 @@ public class InputListener implements View.OnTouchListener {
 
 	private boolean isTap(int factor) {
 		return pathMoved() <= mView.iconSize * factor;
+	}
+	
+	public void setListener(Listener l) {
+	        mListener = l;
 	}
 
 }
