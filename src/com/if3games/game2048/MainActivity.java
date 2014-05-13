@@ -200,15 +200,18 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 	public void onUnlockAchievement(int mergedValue) {
     	for (int i = 0; i < ACHIEVEMENT_BLOCKS.length; i++) {
 			if(mergedValue == ACHIEVEMENT_BLOCKS[i]) {
-				Games.Achievements.unlock(getApiClient(), getString(ACHIEVEMENT[i]));
-				break;
+				if(getApiClient().isConnected()) {
+					Games.Achievements.unlock(getApiClient(), getString(ACHIEVEMENT[i]));
+					break;
+				}
 			}
 		}		
 	}
 
 	@Override
 	public void onStoreScoreLeaderboard(long highScore) {
-		Games.Leaderboards.submitScore(getApiClient(), getString(R.string.leaderboard_score), highScore);
+		if(getApiClient().isConnected())
+			Games.Leaderboards.submitScore(getApiClient(), getString(R.string.leaderboard_score), highScore);
 	}
 
 	@Override
