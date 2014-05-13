@@ -2,13 +2,12 @@ package com.if3games.game2048;
 
 import com.google.android.gms.games.Games;
 import com.google.example.games.basegameutils.BaseGameActivity;
+import com.google.android.gms.ads.*;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.Window;
 
 public class MainActivity extends BaseGameActivity implements InputListener.Listener, MainGame.Listener {
 
@@ -25,6 +24,8 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 	
     // request codes we use when invoking an external activity
     final int RC_RESOLVE = 5000, RC_UNUSED = 5001;
+    
+    private InterstitialAd interstitial;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,11 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 			}
 		}
 		setContentView(view);
+		
+		interstitial = new InterstitialAd(this);
+	    interstitial.setAdUnitId("a153718783b3923");
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	    interstitial.loadAd(adRequest);
 	}
 
 	@Override
@@ -203,5 +209,12 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 	@Override
 	public void onStoreScoreLeaderboard(long highScore) {
 		Games.Leaderboards.submitScore(getApiClient(), getString(R.string.leaderboard_score), highScore);
+	}
+
+	@Override
+	public void onShowAds() {
+	    if (interstitial.isLoaded()) {
+	        interstitial.show();
+	    }
 	}
 }

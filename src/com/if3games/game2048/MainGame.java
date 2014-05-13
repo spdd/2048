@@ -2,6 +2,7 @@ package com.if3games.game2048;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.DialogInterface.OnShowListener;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.preference.PreferenceManager;
@@ -18,6 +19,7 @@ public class MainGame {
     public interface Listener {
         public void onUnlockAchievement(int mergedValue);
         public void onStoreScoreLeaderboard(long highScore);
+        public void onShowAds();
     }
     
     private Listener mListener;
@@ -316,6 +318,7 @@ public class MainGame {
 	private void endGame() {
 		aGrid.startAnimation(-1, -1, FADE_GLOBAL_ANIMATION,
 				NOTIFICATION_ANIMATION_TIME, NOTIFICATION_DELAY_TIME, null);
+		mListener.onShowAds();
 		if (score >= highScore) {
 			highScore = score;
 			recordHighScore();
