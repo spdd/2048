@@ -1,8 +1,9 @@
 package com.if3games.game2048;
 
-import com.google.android.gms.games.Games;
 import com.google.example.games.basegameutils.BaseGameActivity;
-import com.google.android.gms.ads.*;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.games.Games;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -46,8 +47,6 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 		
 		interstitial = new InterstitialAd(this);
 	    interstitial.setAdUnitId("a153718783b3923");
-	    AdRequest adRequest = new AdRequest.Builder().build();
-	    interstitial.loadAd(adRequest);
 	}
 
 	@Override
@@ -216,6 +215,8 @@ public class MainActivity extends BaseGameActivity implements InputListener.List
 
 	@Override
 	public void onShowAds() {
+	    AdRequest adRequest = new AdRequest.Builder().build();
+	    interstitial.loadAd(adRequest);
 	    if (interstitial.isLoaded()) {
 	        interstitial.show();
 	    }
